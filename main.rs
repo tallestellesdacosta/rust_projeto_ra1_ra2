@@ -38,6 +38,25 @@ struct Usuario {
 
 }
 
+impl Usuario {
+    fn new(nome: String, uid: u16) -> Usuario {
+        todo!()
+    }
+
+    fn adiciona_grupo(&mut self, gid: u16) {
+        todo!()
+    }
+
+    fn remove_grupo(&mut self, gid: u16) {
+        todo!()
+    }
+    fn listar_grupos(&self) {
+        todo!()
+    }
+}
+
+
+
 struct Grupo {
 
     nome: String,
@@ -45,6 +64,26 @@ struct Grupo {
     membros_uid: Vec<u16>
 
 }
+
+impl Grupo {
+    fn new(nome: String. gid: u16) -> Grupo {
+        todo!() 
+    }
+
+    fn adiciona_membro(&mut self, uid: u16){
+        todo!()
+    }
+
+    fn remove_membro(&mut self, uid: u16){
+        todo!()
+    }
+
+    fn listar_membros(&self) {
+        todo!()
+    }
+
+}
+
 
 fn main() 
 {
