@@ -39,19 +39,36 @@ struct Usuario {
 }
 
 impl Usuario {
-    fn new(nome: String, uid: u16) -> Usuario {
-        todo!()
+    fn new(nome: String, uid: u16) -> self {
+        Usuario { 
+            nome: nome,
+            uid: uid,
+            grupos_uid: Vec::new(),
+        }
     }
 
     fn adiciona_grupo(&mut self, gid: u16) {
-        todo!()
+        self.grupos_uid.push(gid);
+    }
+
+    fn listar_grupos(&self) {
+        if self.grupos_uid.len() == 0 {
+            print!("Nenhum grupo encontrado.");
+        
+        } else {
+             for n in &self.grupos_uid {
+                println!("{}", n);
+             }
+        }
     }
 
     fn remove_grupo(&mut self, gid: u16) {
-        todo!()
-    }
-    fn listar_grupos(&self) {
-        todo!()
+        for n in 0..self.grupos_uid.len(){
+            if self.grupos_uid[n] == gid{
+                self.grupos_uid.remove(n);
+                break;
+            }
+        }
     }
 }
 
@@ -66,24 +83,39 @@ struct Grupo {
 }
 
 impl Grupo {
-    fn new(nome: String. gid: u16) -> Grupo {
-        todo!() 
-    }
-
+    fn new(nome: String, gid: u16) ->  Self { 
+        Grupo {
+            nome: nome,
+            gid: gid,
+            membros_uid: Vec::new(),
+           }
+        }
+   
     fn adiciona_membro(&mut self, uid: u16){
-        todo!()
+        self.membros_uid.push(uid);
     }
 
-    fn remove_membro(&mut self, uid: u16){
-        todo!()
+    fn listar_membros(&self){
+        if self.membros_uid.len() == 0 {
+            println!("Nenhum membro cadastrado.")
+   
+     } else {
+        
+        for n in &self.membros_uid{
+            println!("{}",n);
+        }
     }
-
-    fn listar_membros(&self) {
-        todo!()
     }
-
+    
+    fn remove_membro(&mut self, uid: u16) {
+        for n in 0..self.membros_uid.len(){
+            if self.membros_uid[n] == uid{
+                self.membros_uid.remove(n);
+                break;
+            }
+        }
+    }
 }
-
 
 fn main() 
 {
