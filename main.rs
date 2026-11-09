@@ -7,12 +7,16 @@ use std::thread;
 use std::time::Duration;
 use std::io::{self, Write};
 
+
+// \x1B avisa pro terminal nao imprimir 
+// e executar oq vem depois
 const CLEAR: &str = "\x1B[2J\x1B[1;1H";
-const RESET: &str = "\x1B[0m";
-const PURPLE: &str = "\x1B[38;5;135m";
-const DIM: &str = "\x1B[38;5;244m";
-const UNDERLINE: &str = "\x1B[4m";
-const BOLD: &str = "\x1B[1m";
+const RESET: &str = "\x1B[0m"; //m indica fontes e cores, 0 eh p limpar
+//38 eh p trocar cor de fonte, 5 eh p indicar que a cor vem no padrao 256 bits
+const PURPLE: &str = "\x1B[38;5;135m"; // 135 eh roxo
+const DIM: &str = "\x1B[38;5;244m"; // 244 eh cinza
+const UNDERLINE: &str = "\x1B[4m"; // 4 eh underline
+const BOLD: &str = "\x1B[1m"; // 1 eh negrito
 
 struct Arquivo {
     nome: String,
