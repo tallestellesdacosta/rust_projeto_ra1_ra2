@@ -1,3 +1,8 @@
+// ALUNOS
+// DANTON TALLES TELLES DA COSTA
+// MARIANE PARANÁ
+
+
 use std::thread;
 use std::time::Duration;
 use std::io::{self, Write};
